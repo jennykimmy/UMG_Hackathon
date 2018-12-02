@@ -1,5 +1,8 @@
 # UMG_Hackathon
 
+![alt text](./pic.png)
+
+
 ### Directory Structure
 
 #### AlbumERC20.sol
