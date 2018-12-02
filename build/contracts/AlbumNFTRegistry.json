@@ -217,7 +217,7 @@
                           "name": "tx",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1964,
+                          "referencedDeclaration": 2055,
                           "src": "461:2:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_transaction",
@@ -266,7 +266,7 @@
                       "lValueRequested": false,
                       "memberName": "transferOwnership",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 509,
+                      "referencedDeclaration": 600,
                       "src": "434:26:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
@@ -672,7 +672,7 @@
                           "name": "tx",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1964,
+                          "referencedDeclaration": 2055,
                           "src": "461:2:3",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_transaction",
@@ -721,7 +721,7 @@
                       "lValueRequested": false,
                       "memberName": "transferOwnership",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 509,
+                      "referencedDeclaration": 600,
                       "src": "434:26:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
@@ -951,5 +951,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-12-02T07:39:15.894Z"
+  "updatedAt": "2018-12-02T07:50:32.681Z"
 }

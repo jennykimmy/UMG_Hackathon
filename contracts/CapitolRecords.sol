@@ -8,7 +8,7 @@ contract CapitolRecords
   AlbumERC20Registry,
   AlbumNFTRegistry
   {
-    event deployedCapitalRecordAlbum(bytes32 id);
+    event deployedCapitalRecordAlbum(bytes32 id, address nft, address erc20);
 
     struct AlbumReference {
       bytes32 id;
@@ -19,7 +19,9 @@ contract CapitolRecords
       address erc20; // as an accounting tool for album ownership
     }
 
-    mapping(bytes32 => AlbumReference) references;
+    mapping(address => AlbumReference) albumByERC20Address;
+    mapping(address => AlbumReference) albumByNFTAddress;
+    mapping(bytes32 => AlbumReference) albumById;
 
     function deployCapitolRecordAlbum(string _albumName, string _albumSymbol, string _albumArtist) public returns (bytes32) {
       // nft
@@ -31,10 +33,16 @@ contract CapitolRecords
 
       AlbumReference memory album = AlbumReference(uniqueId, _albumName, _albumArtist, block.timestamp, nftTokenAddress, erc20TokenAddress);
 
-      references[uniqueId] = album;
+      albumById[uniqueId] = album;
+      albumByNFTAddress[nftTokenAddress] = album;
+      albumByERC20Address[erc20TokenAddress] = album;
 
-      emit deployedCapitalRecordAlbum(uniqueId);
+      emit deployedCapitalRecordAlbum(uniqueId, nftTokenAddress, erc20TokenAddress);
 
       return uniqueId;
+    }
+
+    function payETHToAlbum(uint256 _amount, address erc20erc20TokenAddress) {
+      // do stuff
     }
   }
