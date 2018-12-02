@@ -18,6 +18,6 @@ contract AlbumERC20 is ERC20, ERC20Detailed {
   public
   {
     _totalSupply = initialSupply;
-	  _balances[tx.origin] = totalSupply;
+	  _balances[tx.origin] = _totalSupply;
   }
 }

@@ -14,14 +14,14 @@ contract CapitolRecords
       bytes32 id;
       string albumName;
       string albumArtist;
-      string timestamp;
+      uint256 timestamp;
       address nft; // where the non fungible token lives
       address erc20; // as an accounting tool for album ownership
     }
 
     mapping(bytes32 => AlbumReference) references;
 
-    function deployCapitolRecordAlbum(string _albumName, string _albumSymbol, string _albumArtist) public {
+    function deployCapitolRecordAlbum(string _albumName, string _albumSymbol, string _albumArtist) public returns (bytes32) {
       // nft
       address nftTokenAddress = deployAlbumNFT(50000, _albumName, _albumSymbol);
       // erc20
@@ -29,16 +29,12 @@ contract CapitolRecords
 
       bytes32 uniqueId = keccak256(abi.encodePacked(_albumName, _albumSymbol, _albumArtist));
 
-      AlbumReference storage album = AlbumReference(uniqueId, nftTokenAddress, erc20TokenAddress, _albumName, _albumArtist, block.timestamp);
+      AlbumReference memory album = AlbumReference(uniqueId, _albumName, _albumArtist, block.timestamp, nftTokenAddress, erc20TokenAddress);
 
       references[uniqueId] = album;
 
       emit deployedCapitalRecordAlbum(uniqueId);
 
       return uniqueId;
-    }
-
-    function payEthToAlbum() {
-
     }
   }
