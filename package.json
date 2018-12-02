@@ -1,6 +1,10 @@
 {
   "dependencies": {
     "@0xcert/ethereum-erc721": "^1.10.0",
-    "openzeppelin-solidity": "^2.0.0"
+    "openzeppelin-solidity": "^2.0.0",
+    "web3": "^1.0.0-beta.36"
+  },
+  "devDependencies": {
+    "lite-server": "^2.3.0"
   }
 }

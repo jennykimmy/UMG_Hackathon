@@ -14,9 +14,6 @@ contract AlbumNFTRegistry {
       // instantiate a new album erc721
       AlbumNFT albumNft = new AlbumNFT(_albumName, _albumSymbol);
 
-      // on instantiation the owner is technically this registry sooooo transfer ownership
-      albumNft.transferOwnership(tx.origin);
-
       return address(albumNft);
     }
 
